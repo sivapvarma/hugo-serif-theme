@@ -1,11 +1,14 @@
-stackbitVersion: ~0.2.39
-ssgName: custom
-publishDir: exampleSite/public
-buildCommand: cd exampleSite && hugo --gc --baseURL "/" --themesDir ../.. && cd ..
+stackbitVersion: ~0.3.0
+ssgName: hugo
+ssgVersion: '0.74.3'
+buildCommand: hugo
+publishDir: public
 uploadDir: images
-staticDir: exampleSite/static
-pagesDir: exampleSite/content
-dataDir: exampleSite
+staticDir: static
+pagesDir: content
+dataDir: data
+pageLayoutKey: model
+
 models:
   config:
     type: data
@@ -46,11 +49,18 @@ models:
             name: google_tag_manager_id
             label: Google Tag Manager ID
           - type: object
+            name: homepage
+            label: Homepage
+            fields:
+              - type: boolean
+                name: show_call_box
+                label: Show Callbox on Homepage?
+          - type: object
             name: logo
             label: Params Logo
             fields:
               - type: image
-                name: standard
+                name: desktop
                 label: Logo Desktop
                 description: the path of the desktop logo image
                 required: true
@@ -61,10 +71,13 @@ models:
               - type: string
                 name: alt
                 label: Logo Alt Text
+              - type: string
+                name: desktop_height
+                label: Desktop Logo height in pixels
           - type: object
             name: homepage_meta_tags
             label: Homepage Metatags
-            fields: 
+            fields:
               - type: string
                 name: meta_description
                 label: meta_description
@@ -92,9 +105,18 @@ models:
               - type: string
                 name: meta_twitter_creator
                 label: meta_twitter_creator
-      - type: site_menus
+          - type: object
+            name: footer
+            label: Footer
+            fields:
+              - type: string
+                name: copyright_text
+                label: Copyright Text
+      - type: model
         name: menu
         label: Menus
+        models:
+          - site_menu_item
   site_menus:
     type: object
     label: Site Menus
@@ -107,13 +129,17 @@ models:
         label: Main menu
         description: List of items for Main menu
         items:
-          type: site_menu_item
+          type: model
+          models:
+            - site_menu_item
       - type: list
         name: footer
         label: Footer menu
         description: List of items for Footer menu
         items:
-          type: site_menu_item
+          type: model
+          models:
+            - site_menu_item
   site_menu_item:
     type: object
     label: Site Menu Item
@@ -150,6 +176,7 @@ models:
     file: _index.md
     hideContent: false
     singleInstance: true
+    layout: home
     fields:
       - type: string
         name: title
@@ -174,6 +201,7 @@ models:
     file: 404/_index.md
     hideContent: true
     singleInstance: true
+    layout: pagenotfound
     fields:
       - type: string
         name: title
@@ -184,6 +212,32 @@ models:
     label: Basic Page
     match: '*.md'
     exclude: _index.md
+    layout: basicpage
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: The title of the page.
+      - type: date
+        name: date
+        label: Date
+      - type: string
+        name: layout
+        label: layout
+      - type: enum
+        name: menu
+        label: Menu
+        options:
+          - label: Main Menu
+            value: main
+          - label: Footer Menu
+            value: footer
+  contact:
+    type: page
+    label: Contact Page
+    file: 'contact.md'
+    singleInstance: true
+    layout: contact
     fields:
       - type: string
         name: title
@@ -208,6 +262,7 @@ models:
     label: Service
     folder: services
     exclude: _index.md
+    layout: service
     fields:
       - type: string
         name: title
@@ -215,9 +270,6 @@ models:
       - type: date
         name: date
         label: Date
-      - type: image
-        name: image
-        label: Image
       - type: boolean
         name: draft
         label: Draft
@@ -232,6 +284,7 @@ models:
     label: Services Overview
     file: services/_index.md
     singleInstance: true
+    layout: services
     fields:
       - type: string
         name: title
@@ -255,6 +308,7 @@ models:
     label: Team
     folder: team
     exclude: _index.md
+    layout: team
     fields:
       - type: string
         name: title
@@ -280,11 +334,15 @@ models:
       - type: number
         name: weight
         label: Weight
+      - type: boolean
+        name: promoted
+        label: Promoted
   teams:
     type: page
     label: Team Overview
     file: team/_index.md
     singleInstance: true
+    layout: teams
     fields:
       - type: string
         name: title
