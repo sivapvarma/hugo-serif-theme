@@ -8,5 +8,5 @@ features = ["services","team","about","contact"]
 min_version = "0.74.3"
 
 [author]
-  name = "Robert Austin"
-  homepage = "https://www.zerostatic.io"
+  name = "Siva Chiluvuri"
+  homepage = "https://www.spv.me"
