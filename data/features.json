@@ -6,15 +6,22 @@
     "title": "Histopathology"
   },
   {
+    "title": "Necropsy"
+  },
+  {
     "title": "Slide Scanning"
 
   },
   {
-    "title": "Scanning and Transmission Electronmicroscopy"
+    "title": "Immunohistology"
 
   },
   {
-    "title": "Photomicroscopy"
+    "title": "Scanning and Transmission Electron Microscopy"
+
+  },
+  {
+    "title": "Photo Microscopy"
    
   }
 ]
