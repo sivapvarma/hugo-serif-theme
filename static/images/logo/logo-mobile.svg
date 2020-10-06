@@ -1,6 +1,68 @@
-<svg xmlns="http://www.w3.org/2000/svg" width ="54px" Height="54px"
-     xmlns:xlink="http://www.w3.org/1999/xlink">
-
-    <text x="20"  y="40" stroke="#12f12f">Path GPL</text>
-    <line x1="10" y1="40" x2="150" y2="40" style="stroke: #f24088"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg9"
+   version="1.1"
+   height="64"
+   width="64">
+  <metadata
+     id="metadata15">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs13" />
+  <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+  <g
+     id="g7"
+     class="layer">
+    <title
+       id="title2">Layer 1</title>
+    <text
+       y="124"
+       xml:space="preserve"
+       x="137"
+       transform="matrix(45.2457, 0, 0, 6.61729, -5867.67, -553.331)"
+       text-anchor="middle"
+       stroke-width="0"
+       stroke="#000000"
+       id="svg_1"
+       font-size="24"
+       font-family="serif"
+       fill="#000000" />
+    <text
+       y="108.8947"
+       xml:space="preserve"
+       x="140.53378"
+       transform="matrix(6.56325, 0, 0, 8.02283, -757.358, -580.406)"
+       text-anchor="middle"
+       stroke-width="0"
+       stroke="#000000"
+       id="svg_2"
+       font-size="24"
+       font-family="serif"
+       fill="#7f7f7f">Path</text>
+    <text
+       y="199.513008"
+       xml:space="preserve"
+       x="449.120156"
+       transform="matrix(6.4266, 0, 0, 7.71566, -2400.82, -1247.37)"
+       text-anchor="middle"
+       stroke-width="0"
+       stroke="#000000"
+       id="svg_3"
+       font-size="24"
+       font-family="serif"
+       fill="#ff7f00">GLP</text>
+  </g>
 </svg>
