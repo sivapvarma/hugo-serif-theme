@@ -28,7 +28,7 @@ title = "PathGLP"
     meta_twitter_creator = "@zerostaticio"
 
   [params.footer]
-    copyright_text = 'Copyright @ <a class="zerostatic" href="https://www.PathGLP.com">www.PathGLP.com</a>'
+    copyright_text = 'Copyright @ <a class="zerostatic" href="https://www.PathGLP.com">Experimental Pathology Inc.</a>'
 
 [menu]
   # Main Menu
