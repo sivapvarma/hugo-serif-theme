@@ -10,7 +10,11 @@
       </a>
     </div>
     {{ end }}
+    {{ if .site.Data.contact.address }}
+  <div class="call-phone">
+    <div class="call-phone"><strong>Address:</strong> {{ .site.Data.contact.address}} </div>
   </div>
+  {{ end }}
     {{ if eq .show_button "true" }}
       <div class="call-box-bottom">
         <a href="{{ .site.Data.contact.contact_button_link | relURL }}" class="button">Contact</a>
